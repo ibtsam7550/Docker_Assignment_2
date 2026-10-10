@@ -1,0 +1,10 @@
+[
+  "httperf",
+  "--server=192.168.98.1",
+  "--port=8080",
+  "--uri=/api/solve?work=15000",
+  "--num-conns=3000",
+  "--num-calls=1",
+  "--rate=300",
+  "--timeout=5"
+]

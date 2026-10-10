@@ -1,0 +1,11 @@
+{
+  "min_containers": 1,
+  "max_containers": 4,
+  "scale_out_cpu": 70,
+  "scale_in_cpu": 30,
+  "interval_seconds": 5,
+  "consecutive_samples": 3,
+  "cooldown_seconds": 60,
+  "startup_timeout_seconds": 90,
+  "drain_timeout_seconds": 120
+}

@@ -1,0 +1,36 @@
+name: quadlab
+services:
+  app:
+    build: .
+    image: quadlab-app:local
+    cpus: 1.0
+    mem_limit: 1g
+    memswap_limit: 1g
+    ports:
+      - target: 8000
+        host_ip: 127.0.0.1
+    labels:
+      quadlab.group: app
+    networks:
+      - lab
+    stop_grace_period: 70s
+    restart: unless-stopped
+
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    image: quadlab-nginx:local
+    container_name: quadlab-nginx
+    ports:
+      - "0.0.0.0:8080:80"
+    volumes:
+      - ./nginx/generated:/etc/nginx/conf.d:ro
+    networks:
+      - lab
+    restart: unless-stopped
+
+networks:
+  lab:
+    name: quadlab_net
+    driver: bridge

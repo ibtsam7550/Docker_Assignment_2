@@ -1,0 +1,5 @@
+FROM debian:bookworm-slim
+RUN apt-get update && apt-get install -y --no-install-recommends python3 httperf ca-certificates && rm -rf /var/lib/apt/lists/*
+WORKDIR /work
+COPY workload.py httperf_parser.py lab_common.py ./
+ENTRYPOINT ["python3", "-u", "workload.py"]

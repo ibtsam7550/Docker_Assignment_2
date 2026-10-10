@@ -1,0 +1,25 @@
+start_utc=2026-10-10T10:58:04.899+00:00 start_epoch=1791629884.899424
+httperf: warning: open file limit > FD_SETSIZE; limiting max. # of open files to FD_SETSIZE
+httperf --timeout=5 --client=0/1 --server=192.168.98.1 --port=8080 --uri=/api/solve?work=15000 --rate=100 --send-buffer=4096 --recv-buffer=16384 --num-conns=1000 --num-calls=1
+Maximum connect burst length: 3
+
+Total: connections 1000 requests 1000 replies 1000 test-duration 10.105 s
+
+Connection rate: 99.0 conn/s (10.1 ms/conn, <=24 concurrent connections)
+Connection time [ms]: min 10.7 avg 62.6 max 344.2 median 12.5 stddev 82.2
+Connection time [ms]: connect 0.4
+Connection length [replies/conn]: 1.000
+
+Request rate: 99.0 req/s (10.1 ms/req)
+Request size [B]: 85.0
+
+Reply rate [replies/s]: min 97.2 avg 98.5 max 99.8 stddev 1.8 (2 samples)
+Reply time [ms]: response 62.2 transfer 0.0
+Reply size [B]: header 243.0 content 200.0 footer 0.0 (total 443.0)
+Reply status: 1xx=0 2xx=1000 3xx=0 4xx=0 5xx=0
+
+CPU time [s]: user 3.59 system 6.43 (user 35.5% system 63.7% total 99.2%)
+Net I/O: 51.1 KB/s (0.4*10^6 bps)
+
+Errors: total 0 client-timo 0 socket-timo 0 connrefused 0 connreset 0
+Errors: fd-unavail 0 addrunavail 0 ftab-full 0 other 0

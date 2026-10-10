@@ -1,0 +1,15 @@
+timestamp,epoch,action,container_count,detail
+2026-10-10T10:56:31.223+00:00,1791629791.223934,started,1,"Policy: {""consecutive_samples"": 3, ""cooldown_seconds"": 60, ""drain_timeout_seconds"": 120, ""interval_seconds"": 5, ""max_containers"": 4, ""min_containers"": 1, ""scale_in_cpu"": 30, ""scale_out_cpu"": 70, ""startup_timeout_seconds"": 90}"
+2026-10-10T10:57:38.464+00:00,1791629858.464708,starting,2,quadlab-extra-447a7c44
+2026-10-10T10:57:45.276+00:00,1791629865.276512,scale_out,2,quadlab-extra-447a7c44 healthy and added to Nginx
+2026-10-10T10:58:48.890+00:00,1791629928.890678,starting,3,quadlab-extra-bfacf7bb
+2026-10-10T10:58:56.159+00:00,1791629936.159513,scale_out,3,quadlab-extra-bfacf7bb healthy and added to Nginx
+2026-10-10T11:00:00.480+00:00,1791630000.480372,starting,4,quadlab-extra-183bc168
+2026-10-10T11:00:07.895+00:00,1791630007.895849,scale_out,4,quadlab-extra-183bc168 healthy and added to Nginx
+2026-10-10T11:10:28.137+00:00,1791630628.137304,draining,4,/quadlab-extra-183bc168 excluded from new Nginx workers
+2026-10-10T11:10:29.398+00:00,1791630629.39823,scale_in,3,"/quadlab-extra-183bc168 drained, stopped and removed"
+2026-10-10T11:11:33.156+00:00,1791630693.156565,draining,3,/quadlab-extra-bfacf7bb excluded from new Nginx workers
+2026-10-10T11:11:34.055+00:00,1791630694.055292,scale_in,2,"/quadlab-extra-bfacf7bb drained, stopped and removed"
+2026-10-10T11:12:38.178+00:00,1791630758.178887,draining,2,/quadlab-extra-447a7c44 excluded from new Nginx workers
+2026-10-10T11:12:40.629+00:00,1791630760.629924,scale_in,1,"/quadlab-extra-447a7c44 drained, stopped and removed"
+2026-10-10T11:12:57.400+00:00,1791630777.400154,stopped,1,Controller stopped; containers remain running
