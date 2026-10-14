@@ -6,7 +6,7 @@ This folder contains the code and commands for all five milestones of your assig
 
 | Component | Location | Purpose |
 |---|---|---|
-| Browser and httperf | Mac | Send requests to http://127.0.0.1:8080 |
+| Browser and httperf | Linux VM | Send requests to http://192.168.98.1:8080 |
 | autoscaler.py | Mac | Measure containers, change their number and reload Nginx |
 | cpu_profiler.py | Mac | Record whole-Mac CPU and memory |
 | Nginx container | Docker | Distribute requests between healthy app containers |
@@ -181,7 +181,7 @@ python workload.py
 
 The default target is `http://127.0.0.1:8080/api/solve?work=80000`. All load therefore goes through Nginx.
 
-The sequence is 0, 20, 60, 120, 180, 120, 60, 20, 0 requests/second. Each phase lasts 120 nominal seconds, followed by an extra 120-second idle tail: about 20 minutes plus process/request completion overhead. Each phase is split into 10-second httperf windows to provide more graph points. Brief process-start gaps are possible; timestamps record the actual window boundaries.
+The sequence is 50,100,150,200,250,300,500,1000,500,400,300,250,200,150,100,50,0 requests/second. Each phase lasts 40 nominal seconds, followed by an extra 40-second idle tail. Each phase is split into 10-second httperf windows to provide more graph points. Brief process-start gaps are possible; timestamps record the actual window boundaries.
 
 The extra `work=80000` performs 80,000 PBKDF2 iterations per request. It is synthetic CPU work, not part of the quadratic formula and not a delay created with `sleep`. Disclose it in your report. Normal browser requests use `work=0`. Without this added work, a tiny quadratic calculation may require a much higher request rate to cross 70% CPU.
 
